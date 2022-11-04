@@ -24,6 +24,10 @@ df = spark.read.options(header='True', inferSchema='True', delimiter=',') \
 df2 = spark.read.options(header='True', inferSchema='True', delimiter=',') \
     .csv(dataset_2)
 
+#Data should be joined using the **id** field
+
+df = df.join(df2, ['id'])
+
 
 #Remove personal identifiable information from the first dataset (Excluding emails)
 #Only use clients from the **United Kingdom** or the **Netherlands**
@@ -34,12 +38,8 @@ df = df.filter(df.country.isin(remove_countrys)).drop(df.email)
 
 #Remove credit card number from the second dataset
 
-df2 = df2.drop(df2.cc_n)
+df = df.drop(df.cc_n)
 
-
-#Data should be joined using the **id** field
-
-df = df.join(df2, ['id'])
 
 
 #Rename the columns for the easier readability to the business users

@@ -9,9 +9,9 @@ The company now needs a dataset containing the emails of the clients from the Un
 
 ## Features
 - CSV reader.
-- Remove personal identifiable information from the first dataset(emails).
+- Remove personal identifiable information from the first dataset (emails).
 - Filter clients from the United Kingdom or the Netherlands.
 - Remove credit card number from the second dataset.
 - Data joined using the id field.
 - Rename the columns for the easier readability to the business user.
-- Save the output in a **client_data** directory in the root directory of the project.
+- Save the output in a client_data directory in the root directory of the project.
